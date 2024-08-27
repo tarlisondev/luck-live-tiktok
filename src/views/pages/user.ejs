@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head'); %>
+    <body>
+        <%- include ("../partials/header"); %>
+            <section class="container">
+                <h2><%= title %></h2>
+                <div class="users">
+                    <% if (data) { %>
+                        <% data.map((item)=> { %>
+                            <div class="lucks">
+                                <p>@<%= item.name %></p>
+                                <p><%= item.number %></p>
+                            </div>
+                        <% }); %>
+                    <% } %>
+                </div>
+            </section>
+        <%- include ("../partials/footer"); %>
+        <script src="/public/js/main.js"></script>
+    </body>
+</html>

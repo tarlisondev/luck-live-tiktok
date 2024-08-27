@@ -1,0 +1,45 @@
+
+.users {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*## numeros dos usuarios*/
+.lucks {
+    display: flex;
+    border: 1px solid green;
+    margin: 5px 5px 5px 0px;
+    border-radius: 5px;
+}
+
+.lucks p {
+    margin: 5px;
+}
+
+img {
+    width: 100px;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+header nav a {
+    flex: 1;
+    text-decoration: none;
+}
+
+header ul {
+    display: flex;
+    align-items: center;
+}
+
+header ul input{
+    margin: 0;
+}
+
+header ul li {
+    margin: 10px;
+    list-style: none;
+}

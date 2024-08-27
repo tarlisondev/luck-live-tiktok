@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2{
+    margin-top: 10px;
+}
+
+header{
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+section{
+    width: 100%;
+    margin: 10px 0px;
+}
+
+header img{
+    width: 50px;
+}
+
+header input{
+    padding: 8px;
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+}
+
+form{
+    border: 1px solid blue;
+    border-radius: 5px;
+    margin: 10px auto;
+    padding: 10px 10px 0px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+form input{
+    margin-bottom: 10px;
+}
+
+form input[type="submit"]:hover{
+    background: green;
+    color: white;
+    font-weight: bold;
+}
+
+input,  label{
+    padding: 6px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #888;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+footer p{
+    color: white;
+    text-shadow: 1px 1px 2px black;
+font-weight: bold;
+}
