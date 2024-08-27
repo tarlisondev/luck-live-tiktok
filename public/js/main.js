@@ -1,6 +1,6 @@
 
 const search = document.getElementById("search");
-const url = "http://localhost:3333"
+const url = window.location.host || "https://luck-live-tiktok.onrender.com"
 
 search.addEventListener("change", (event) => {
     event.preventDefault();
