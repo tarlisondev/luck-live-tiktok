@@ -1,6 +1,6 @@
 
 const search = document.getElementById("search");
-const url = window.location.host || "https://luck-live-tiktok.onrender.com"
+const url = "https://luck-live-tiktok.onrender.com"
 
 search.addEventListener("change", (event) => {
     event.preventDefault();
@@ -9,9 +9,9 @@ search.addEventListener("change", (event) => {
     let isValid = regex.test(search.value);
 
     if (isValid) {
-        window.location.href = `${url}/user/luck/${search.value}`;
+        return window.location.href = `${url}/user/luck/${search.value}`;
     } else {
-        window.location.href = `${url}/user/${search.value}`;
+        return window.location.href = `${url}/user/${search.value}`;
     }
 
 })
