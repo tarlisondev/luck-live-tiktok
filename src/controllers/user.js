@@ -4,7 +4,7 @@ const User = require("../models/user");
 const findUsers = async (req, res) => {
     try {
         res.render("pages/user", { data: await User.find(), title: "Todas as cotas" })
-    } catch (error) { console.log(error) }
+    } catch (error) { console.log("Error no findUsers: ", error) }
 }
 
 const findName = async (req, res) => {
@@ -16,8 +16,13 @@ const findName = async (req, res) => {
     }
 
     try {
-        res.render("pages/user", { data: await User.find({ name: name }), title: "Cotas do usuario: @" + name });
-    } catch (error) { }
+        const quotas = await User.find({name: name});
+
+        if(quotas.length === 0){
+            return res.render("pages/error", {error: "Usuario não encontrado."})
+        }
+        res.render("pages/user", { data: quotas, title: "Cotas do usuario: @" + name });
+    } catch (error) {console.log("Error no findName: ", error) }
 }
 
 const findNumber = async (req, res) => {
@@ -29,8 +34,14 @@ const findNumber = async (req, res) => {
     }
 
     try {
-        res.render("pages/user", { data: await User.find({ number: number }), title: "Cota vencedora" })
-    } catch (error) { }
+        const quotas = await User.find({number: number});
+        console.log(quotas)
+
+        if(quotas.length === 0){
+            return res.render("pages/error", {error: "Numero não encontrado."})
+        }
+        res.render("pages/user", { data: quotas, title: "Cota vencedora" })
+    } catch (error) { console.log("Error no findNumber: ", error) }
 }
 
 module.exports = {

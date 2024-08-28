@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/head'); %>
-
+    <%- include('../partials/head'); %>
     <body>
         <%- include("../partials/header"); %>
-            <section class="container">
-                <h2><%= title %></h2>
-                <div>
+            <section>
+                <div class="container">
                     <div>
-                        <img src="https://luck-live-tiktok.onrender.com/public/imgs/<%= data.image%>" alt="<%= data.name %>">
-                        <h3> Titulo: 
-                            <%= data.title %>
-                        </h3>
-                        <p>Descrição: 
-                            <%= data.description %>
-                        </p>
-                        <span>Restante: 
-                            <%= percentual %>%
-                        </span>
+                        <div>
+                            <img src="data:jpeg;base64,<%= image %>" alt="<%= description %>">
+                        </div>
+                        <div>
+                            <h3> <strong>Titulo: </strong> 
+                                <%= title %>
+                            </h3>
+                            <p><strong>Descrição: </strong>
+                                <%= description %>
+                            </p>
+                            <span><strong>Restante: </strong> 
+                                <%= percentage %>%
+                            </span>
+                        </div>
                     </div>
                 </div>
             </section>
-            <%- include("../partials/footer"); %>
+        <%- include("../partials/footer"); %>
     </body>
 </html>

@@ -18,6 +18,18 @@ section{
     margin: 10px 0px;
 }
 
+section>div>div{
+    display: flex;
+    align-items: center;
+    margin: 10px 0px;
+    box-shadow: 1px 1px 3px #555;
+}
+
+section>div>div img{
+    margin: 10px 10px 5px 10px;
+    border-radius: 5px;
+}
+
 header img{
     width: 50px;
 }

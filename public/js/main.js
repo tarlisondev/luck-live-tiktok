@@ -1,5 +1,5 @@
 
-const search = document.getElementById("search");
+const search = document.getElementById("search")
 const url = "https://luck-live-tiktok.onrender.com"
 
 search.addEventListener("change", (event) => {
@@ -13,5 +13,4 @@ search.addEventListener("change", (event) => {
     } else {
         return window.location.href = `${url}/user/${search.value}`;
     }
-
 })
