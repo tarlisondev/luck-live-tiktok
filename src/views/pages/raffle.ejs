@@ -7,21 +7,18 @@
             <section class="container">
                 <h2><%= title %></h2>
                 <div>
-                    <% data.map((item)=> { %>
-                        <div>
-                            <img src="https://luck-live-tiktok.onrender.com/public/imgs/<%= item.image%>" alt="<%= item.name %>">
-                            <h3> Titulo: 
-                                <%= item.title %>
-                            </h3>
-                            <p>Descrição: 
-                                <%= item.description %>
-                            </p>
-                            <span>Vendidos: 
-                                <%= item.amount %>
-                            </span>
-                        </div>
-
-                        <% }); %>
+                    <div>
+                        <img src="https://luck-live-tiktok.onrender.com/public/imgs/<%= data.image%>" alt="<%= data.name %>">
+                        <h3> Titulo: 
+                            <%= data.title %>
+                        </h3>
+                        <p>Descrição: 
+                            <%= data.description %>
+                        </p>
+                        <span>Adiquiridos: 
+                            <%= percentual %>%
+                        </span>
+                    </div>
                 </div>
             </section>
             <%- include("../partials/footer"); %>
