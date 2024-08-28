@@ -16,12 +16,12 @@ const findName = async (req, res) => {
     }
 
     try {
-        const quotas = await User.find({name: name});
+        const quotas = await User.find({name: name.toLowerCase()});
 
         if(quotas.length === 0){
             return res.render("pages/error", {error: "Usuario não encontrado."})
         }
-        res.render("pages/user", { data: quotas, title: "Cotas do usuario: @" + name });
+        res.render("pages/user", { data: quotas, title: "Cotas de : @" + name.toLowerCase() });
     } catch (error) {console.log("Error no findName: ", error) }
 }
 

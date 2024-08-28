@@ -5,7 +5,8 @@
         <%- include("../partials/header"); %>
             <section>
                 <div class="container">
-                    <div>
+                    <a href="/user">
+                        
                         <div>
                             <img src="data:jpeg;base64,<%= image %>" alt="<%= description %>">
                         </div>
@@ -19,8 +20,9 @@
                             <span><strong>Restante: </strong> 
                                 <%= percentage %>%
                             </span>
-                        </div>
-                    </div>
+                        </div> 
+                        
+                    </a>
                 </div>
             </section>
         <%- include("../partials/footer"); %>

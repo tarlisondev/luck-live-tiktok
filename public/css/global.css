@@ -18,14 +18,15 @@ section{
     margin: 10px 0px;
 }
 
-section>div>div{
+section>div>a{
     display: flex;
     align-items: center;
     margin: 10px 0px;
     box-shadow: 1px 1px 3px #555;
+    text-decoration: none;
 }
 
-section>div>div img{
+section>div>a img{
     margin: 10px 10px 5px 10px;
     border-radius: 5px;
 }
