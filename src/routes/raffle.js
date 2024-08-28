@@ -1,14 +1,15 @@
-
 const { Router } = require("express");
 
-const { findRaffle, createRaffle, create } = require("../controllers/raffle");
-const upload = require("../multer/upload");
-const authorization = require("../middlewares/middleware");
+const findRaffle = require("../controllers/raffle");
+const { notFoundRouter, internalError } = require("./error");
+const routeUser = require("./user");
 
-const raffleRouter = Router();
+const router = Router();
 
-raffleRouter.get("/", authorization, findRaffle);
-raffleRouter.get("/create", authorization, create);
-raffleRouter.post("/", authorization, upload, createRaffle);
+router.get("/", findRaffle);
+router.use("/user", routeUser);
 
-module.exports = raffleRouter;
+router.use(notFoundRouter);
+router.use(internalError);
+
+module.exports = router;

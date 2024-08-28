@@ -7,6 +7,4 @@ const internalError = (err, req, res, next) => {
     res.status(500).render("pages/error", {error: "Erro desconhecido, tente novamente mais tarde"});
 }
 
-module.exports = {
-    notFoundRouter, internalError
-}
+module.exports = {notFoundRouter, internalError}

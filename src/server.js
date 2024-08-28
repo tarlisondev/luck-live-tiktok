@@ -2,14 +2,10 @@ const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
 const path = require("path");
-const session = require("express-session")
+
 const config = require("./config/config");
-require("./controllers/tiktok");
-
-
-const router = require("./routes/router");
-const connection = require("./models/connection");
-const { notFoundRouter, internalError } = require("./routes/error");
+const router = require("./routes/raffle");
+const connection = require("./models/conn");
 
 const server = express();
 
@@ -22,16 +18,7 @@ server.use(helmet());
 server.set("view engine", "ejs");
 server.set("views", path.join(__dirname, "views"));
 
-server.use(session({
-    secret: "gato de bota",
-    saveUninitialized: false,
-    resave: false,
-}))
-
 server.use(router);
-
-router.use(notFoundRouter); // error de rota
-router.use(internalError); // error interno server
 
 connection
     .then(() => {

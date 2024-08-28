@@ -1,3 +1,4 @@
+
 const User = require("../models/user");
 
 const findUsers = async (req, res) => {
@@ -6,20 +7,20 @@ const findUsers = async (req, res) => {
     } catch (error) { console.log(error) }
 }
 
-const findByUsername = async (req, res) => {
+const findName = async (req, res) => {
 
-    const { username } = req.params;
+    const { name } = req.params;
 
-    if (!username) {
+    if (!name) {
         return res.status(400).render("pages/error", { error: "Username é obrigatório" })
     }
 
     try {
-        res.render("pages/user", { data: await User.find({ name: username }), title: "Cotas do usuario: @" + username });
+        res.render("pages/user", { data: await User.find({ name: name }), title: "Cotas do usuario: @" + name });
     } catch (error) { }
 }
 
-const numberLuck = async (req, res) => {
+const findNumber = async (req, res) => {
 
     const { number } = req.params;
 
@@ -34,6 +35,6 @@ const numberLuck = async (req, res) => {
 
 module.exports = {
     findUsers,
-    findByUsername,
-    numberLuck
+    findName,
+    findNumber
 }

@@ -18,8 +18,9 @@ const raffle = new Schema({
         type: Number,
     },
     numbers: [String],
-})
+});
 
 const Raffle = model("Raffle", raffle);
 
-module.exports =  Raffle;
+module.exports = Raffle;
+

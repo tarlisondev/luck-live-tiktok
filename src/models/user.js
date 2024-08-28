@@ -7,8 +7,9 @@ const user = new Schema({
     number: {
         type: String,
     }
-})
+});
 
 const User = model("User", user);
 
 module.exports = User;
+
