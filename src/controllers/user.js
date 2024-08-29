@@ -4,7 +4,7 @@ const User = require("../models/user");
 const findUsers = async (req, res) => {
     try {
         res.render("pages/user", { data: await User.find(), title: "Todas as cotas" })
-    } catch (error) { console.log("Error no findUsers: ", error) }
+    } catch (error) { console.log("Error no controller/findUsers: ") }
 }
 
 const findName = async (req, res) => {
@@ -22,7 +22,7 @@ const findName = async (req, res) => {
             return res.render("pages/error", {error: "Usuario não encontrado."})
         }
         res.render("pages/user", { data: quotas, title: "Cotas de : @" + name.toLowerCase() });
-    } catch (error) {console.log("Error no findName: ", error) }
+    } catch (error) {console.log("Error no controller/findName: ") }
 }
 
 const findNumber = async (req, res) => {
@@ -41,7 +41,7 @@ const findNumber = async (req, res) => {
             return res.render("pages/error", {error: "Numero não encontrado."})
         }
         res.render("pages/user", { data: quotas, title: "Cota vencedora" })
-    } catch (error) { console.log("Error no findNumber: ", error) }
+    } catch (error) { console.log("Error no controller/findNumber: ") }
 }
 
 module.exports = {

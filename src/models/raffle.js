@@ -10,14 +10,9 @@ const raffle = new Schema({
     image: {
         type: String,
     },
-    winner: {
-        type: String,
-        default: "",
-    },
-    amount: {
+    quotas: {
         type: Number,
     },
-    numbers: [String],
 });
 
 const Raffle = model("Raffle", raffle);
