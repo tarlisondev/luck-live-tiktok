@@ -12,33 +12,34 @@ const findName = async (req, res) => {
     const { name } = req.params;
 
     if (!name) {
-        return res.status(400).render("pages/error", { error: "Username é obrigatório" })
+        return res.render("pages/error", { error: "Usuario invalido ou não existe." })
     }
 
     try {
-        const quotas = await User.find({name: name.toLowerCase()});
+        const quotas = await User.find({ name: name.toLowerCase() });
 
-        if(quotas.length === 0){
-            return res.render("pages/error", {error: "Usuario não encontrado."})
+        if (quotas.length === 0) {
+            return res.render("pages/error", { error: "Usuario invalido ou não existe." })
         }
         res.render("pages/user", { data: quotas, title: "Cotas de : @" + name.toLowerCase() });
-    } catch (error) {console.log("Error no controller/findName: ") }
+    } catch (error) { console.log("Error no controller/findName: ") }
 }
 
 const findNumber = async (req, res) => {
 
     const { number } = req.params;
 
-    if (!number || number !== 6) {
-        return res.status(400).render("pages/error", { error: "Um numero é obrigatório" });
+    const len = String(number);
+
+    if (!number || len.length != 6) {
+        return res.status(400).render("pages/error", { error: "Numero digitado é invalido ou não existe." });
     }
 
     try {
-        const quotas = await User.find({number: number});
-        console.log(quotas)
+        const quotas = await User.find({ number: number });
 
-        if(quotas.length === 0){
-            return res.render("pages/error", {error: "Numero não encontrado."})
+        if (quotas.length === 0) {
+            return res.status(400).render("pages/error", { error: "Numero digitado é invalido ou não existe." })
         }
         res.render("pages/user", { data: quotas, title: "Cota vencedora" })
     } catch (error) { console.log("Error no controller/findNumber: ") }

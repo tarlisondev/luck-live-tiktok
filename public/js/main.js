@@ -1,16 +1,25 @@
 
 const search = document.getElementById("search")
-const url = "https://luck-live-tiktok.onrender.com"
+const url = "http://localhost:3333"// "https://luck-live-tiktok.onrender.com"
 
 search.addEventListener("change", (event) => {
     event.preventDefault();
 
-    const regex = /^\d{6}$/;
-    let isValid = regex.test(search.value);
+    const regex = /^\d+$/;
+    let isNumber = regex.test(search.value);
 
-    if (isValid) {
-        return window.location.href = `${url}/user/luck/${search.value}`;
+    if (isNumber) {
+        window.location.href = `${url}/user/luck/${search.value}`;
+
+        setTimeout(() => {
+           console.log(document.getElementById("quotas"))
+        }, 5000);
+
     } else {
-        return window.location.href = `${url}/user/${search.value}`;
+        window.location.href = `${url}/user/${search.value}`;
+
+        setTimeout(() => {
+            console.log(document.getElementById("quotas"))
+        }, 5000);
     }
 })
